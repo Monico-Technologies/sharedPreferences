@@ -1,0 +1,4 @@
+sharedPreferences
+=================
+
+SharedPreferences Android Plugin
