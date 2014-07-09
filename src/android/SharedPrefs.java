@@ -1,4 +1,4 @@
-package com.preferenceShared.sharedprefs;
+package com.finder.sharedprefs;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -25,6 +25,7 @@ public class SharedPrefs extends CordovaPlugin {
         editor.putString(key,value);
         editor.commit();
         return "Done,"+sharedName+","+key+","+value;
+        //return args;
     }
     public String getData(String sharedName, String key){
         Context context = this.cordova.getActivity();
@@ -36,6 +37,7 @@ public class SharedPrefs extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+        // your init code here
     }
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
@@ -60,7 +62,7 @@ public class SharedPrefs extends CordovaPlugin {
             else {
                 return false;
             }
-        } catch (JSONException e) {
+           } catch (JSONException e) {
             return false;
         }
     } 
